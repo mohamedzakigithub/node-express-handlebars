@@ -1,6 +1,7 @@
-<li class="list-group-item">
-	{{name}}	
+<li class="list-group-item my-2">
+	{{name}}
+	<button class="delete float-right btn btn-danger" data-id="{{id}}" >Delete</button>
 	{{#unless devoured}}
-<button class="change-devourStatus float-right" data-id="{{id}}" >Devour It</button>
+<button class="change-devourStatus float-right btn btn-info mx-2" data-id="{{id}}" >Devour It!</button>
 	{{/unless}}
 </li>
