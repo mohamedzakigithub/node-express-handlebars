@@ -1,13 +1,18 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
+var connection;
 
-var connection = mysql.createConnection({
-  host: "sql12.freemysqlhosting.net",
-  port: 3306,
-  user: "sql12338507",
-  password: "thGCqKmB8p",
-  database: "sql12338507",
-});
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: "sql12.freemysqlhosting.net",
+    port: 3306,
+    user: "sql12338507",
+    password: "thGCqKmB8p",
+    database: "sql12338507",
+  });
+}
 
 // Make connection.
 connection.connect(function (err) {
